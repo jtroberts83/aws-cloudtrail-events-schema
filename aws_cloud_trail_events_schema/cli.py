@@ -57,6 +57,7 @@ def schema(event_source, api_version):
     if event_source == "":
         data_directory_name = botocore.__file__.replace("__init__.py", "data/{}".format(event_source))
         services = list_dirs(data_directory_name)
+        services.sort()
         print("Services:")
         for service in services:
             print("- {}".format(service))
